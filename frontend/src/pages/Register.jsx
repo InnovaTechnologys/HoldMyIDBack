@@ -139,6 +139,7 @@ function Register() {
                   name="nombre"
                   value={form.nombre}
                   onChange={handleChange}
+                  autoComplete="given-name"
                   required
                 />
               </div>
@@ -150,6 +151,7 @@ function Register() {
                   name="apellidos"
                   value={form.apellidos}
                   onChange={handleChange}
+                  autoComplete="family-name"
                   required
                 />
               </div>
@@ -162,6 +164,7 @@ function Register() {
                     name="codigo_estudiante"
                     value={form.codigo_estudiante}
                     onChange={handleChange}
+                    autoComplete="off"
                     required
                   />
                 </div>
@@ -176,6 +179,7 @@ function Register() {
                       name="cedula"
                       value={form.cedula}
                       onChange={handleChange}
+                      autoComplete="off"
                       required
                     />
                   </div>
@@ -186,6 +190,7 @@ function Register() {
                       name="cargo"
                       value={form.cargo}
                       onChange={handleChange}
+                      autoComplete="off"
                       required
                     />
                   </div>
@@ -200,6 +205,7 @@ function Register() {
                   type="email"
                   value={form.email}
                   onChange={handleChange}
+                  autoComplete="email"
                   required
                 />
               </div>
@@ -212,6 +218,7 @@ function Register() {
                   type="password"
                   value={form.contrasena}
                   onChange={handleChange}
+                  autoComplete="new-password"
                   required
                 />
               </div>
@@ -251,8 +258,7 @@ function Register() {
                   maxLength="6"
                   value={codigo}
                   onChange={(e) => setCodigo(e.target.value.toUpperCase())}
-                  placeholder="000000"
-                  required
+                  placeholder="000000"                  autoComplete="off"                  required
                   autoFocus
                   style={{ textAlign: 'center', fontSize: '20px', letterSpacing: '5px' }}
                 />

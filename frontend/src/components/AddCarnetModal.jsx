@@ -238,6 +238,7 @@ function AddCarnetModal({ isOpen, onClose, onCarnetAdded, token, usuarioId, carn
                     value={form.cedula}
                     onChange={handleChange}
                     placeholder={tipoCarnet === 'ESTUDIANTE' ? 'Ej: 202310014' : 'Ej: 1131110580'}
+                    autoComplete="off"
                     required
                     autoFocus
                   />
@@ -286,6 +287,7 @@ function AddCarnetModal({ isOpen, onClose, onCarnetAdded, token, usuarioId, carn
                     value={codigo}
                     onChange={(e) => setCodigo(e.target.value.toUpperCase())}
                     placeholder="000000"
+                    autoComplete="off"
                     required
                     autoFocus
                     style={{ textAlign: 'center', fontSize: '20px', letterSpacing: '5px' }}
@@ -347,6 +349,7 @@ function AddCarnetModal({ isOpen, onClose, onCarnetAdded, token, usuarioId, carn
                     value={form.numero}
                     onChange={handleChange}
                     placeholder="Número de credencial"
+                    autoComplete="off"
                     required
                   />
                 </div>

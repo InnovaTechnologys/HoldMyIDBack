@@ -96,56 +96,54 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-header">
-        <h1>Mi Cartera Digital</h1>
-        <p>Gestiona tus carnets</p>
-      </div>
-
-      <section className="perfil-section">
-        <div className="perfil-info">
-          <h2>Hola, {user.nombre}</h2>
-          <p>Email: {user.email}</p>
-        </div>
-        <button className="btn-logout" onClick={handleLogout}>
-          Cerrar Sesión
-        </button>
-      </section>
-
-      {error && <div style={{ color: 'red', marginLeft: '20px' }}>{error}</div>}
-
-      <section className="carnets-section">
-        <h3>Mis Carnets ({carnets.length})</h3>
-        <div className="carnets-grid">
-          {carnets.length > 0 ? (
-            carnets.map((carnet) => <CarnetCard key={carnet.id} estudiante={carnet} />)
-          ) : (
-            <p>No tienes carnets aún.</p>
-          )}
+        <div className="dashboard-header">
+          <h1>Mi Cartera Digital</h1>
+          <p>Gestiona tus carnets</p>
         </div>
 
-        <button className="btn-add-carnet" onClick={() => setShowModal(true)}>
-          + Agregar Carnet
-        </button>
-      </section>
+        <section className="perfil-section">
+          <div className="perfil-info">
+            <h2>Hola, {user.nombre}</h2>
+            <p>Email: {user.email}</p>
+          </div>
+          <button className="btn-logout" onClick={handleLogout}>
+            Cerrar Sesión
+          </button>
+        </section>
 
-      <AddCarnetModal
-        isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        onCarnetAdded={handleCarnetAdded}
-        token={localStorage.getItem('token')}
-        usuarioId={user.id}
-        carnetosActuales={carnets}
-      />
+        {error && <div style={{ color: 'red', marginLeft: '20px' }}>{error}</div>}
 
-      <UploadPhotoModal
-        isOpen={showPhotoModal}
-        onClose={() => setShowPhotoModal(false)}
-        carnet={carnetSinFoto}
-        token={localStorage.getItem('token')}
-        onPhotoUploaded={handlePhotoUploaded}
-      />
+        <section className="carnets-section">
+          <h3>Mis Carnets ({carnets.length})</h3>
+          <div className="carnets-grid">
+            {carnets.length > 0 ? (
+              carnets.map((carnet) => <CarnetCard key={carnet.id} estudiante={carnet} />)
+            ) : (
+              <p>No tienes carnets aún.</p>
+            )}
+          </div>
 
-      
+          <button className="btn-add-carnet" onClick={() => setShowModal(true)}>
+            + Agregar Carnet
+          </button>
+        </section>
+
+        <AddCarnetModal
+          isOpen={showModal}
+          onClose={() => setShowModal(false)}
+          onCarnetAdded={handleCarnetAdded}
+          token={localStorage.getItem('token')}
+          usuarioId={user.id}
+          carnetosActuales={carnets}
+        />
+
+        <UploadPhotoModal
+          isOpen={showPhotoModal}
+          onClose={() => setShowPhotoModal(false)}
+          carnet={carnetSinFoto}
+          token={localStorage.getItem('token')}
+          onPhotoUploaded={handlePhotoUploaded}
+        />
     </div>
   );
 }

@@ -55,6 +55,7 @@ function Login() {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
+              autoComplete="email"
               required
             />
           </div>
@@ -66,6 +67,7 @@ function Login() {
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+              autoComplete="current-password"
               required
             />
           </div>
