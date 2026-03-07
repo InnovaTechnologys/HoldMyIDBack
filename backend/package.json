@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest --verbose",
+    "test": "jest --verbose --coverage",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
