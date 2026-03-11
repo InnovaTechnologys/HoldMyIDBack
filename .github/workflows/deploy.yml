@@ -35,7 +35,7 @@ jobs:
           'RewriteRule . /index.html [L]' > build/.htaccess
 
       - name: Deploy a Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
