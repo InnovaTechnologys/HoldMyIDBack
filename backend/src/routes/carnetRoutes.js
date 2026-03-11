@@ -2,6 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const router = express.Router();
 const authMiddleware = require('../middleware/auth');
+const generalLimiter = require('../middleware/generalLimiter');
 const {
   obtenerCarnets,
   obtenerCarnetPorId,
@@ -47,6 +48,7 @@ router.get('/status', (req, res) => {
 
 // RUTAS PROTEGIDAS (requieren autenticación)
 router.use(authMiddleware);
+router.use(generalLimiter);
 
 // GET /api/carnets - Obtener todos los carnets del usuario
 router.get('/', obtenerCarnets);

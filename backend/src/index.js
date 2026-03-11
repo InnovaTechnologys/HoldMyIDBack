@@ -8,6 +8,7 @@ const carnetRoutes = require('./routes/carnetRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const validacionRoutes = require('./routes/validacionRoutes');
 const crearBaseDatos = require('./utils/crearBaseDatos');
+const generalLimiter = require('./middleware/generalLimiter');
 
 const app = express();
 
@@ -15,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(generalLimiter);
 
 // Inicializar servidor
 const inicializarServidor = async () => {
